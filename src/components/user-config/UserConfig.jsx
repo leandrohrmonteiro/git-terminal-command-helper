@@ -12,20 +12,8 @@ const UserConfig = () => {
     }
 
     const typeOfOperation = () => {
-        if(operation === 'setGlobalName') {
-            return(
-                <div>
-                    <SetGlobalName />
-                </div>
-            )   
-        }
-        if(operation === 'setGlobalEmail') {
-            return(
-                <div>
-                    <SetGlobalEmail />
-                </div>
-            )   
-        }
+        if(operation === 'setGlobalName') {return(<div><SetGlobalName /></div>)}
+        if(operation === 'setGlobalEmail') {return(<div><SetGlobalEmail /></div>)}
     }
     
 

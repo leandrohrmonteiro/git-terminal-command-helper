@@ -15,27 +15,9 @@ const Form = () => {
         }
 
         const typeOfRepository = () => {
-            if(repository === 'userConfig') {
-                return(
-                    <div>
-                        <UserConfig />
-                    </div>
-                )   
-            }
-            if(repository === 'local') {
-                return(
-                    <div>
-                        <LocalRepository />
-                    </div>
-                )   
-            }
-            if(repository === 'remote') {
-                return(
-                    <div>
-                        <RemoteRepository />
-                    </div>
-                )
-            } 
+            if(repository === 'userConfig') {return(<div><UserConfig /></div>)}
+            if(repository === 'local') {return(<div><LocalRepository /></div>)}
+            if(repository === 'remote') {return(<div><RemoteRepository /></div>)} 
         }
 
     return(

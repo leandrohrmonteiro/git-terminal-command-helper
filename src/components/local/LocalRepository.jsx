@@ -20,70 +20,15 @@ const handleOnChange = (event) => {
 }
 
 const typeOfOperation = () => {
-    if(operation === 'startLocalRepository') {
-        return(
-            <div>
-                <StartLocalRepository />
-            </div>
-        )   
-    }
-    if(operation === 'checkRepositoryStatus') {
-        return(
-            <div>
-                <CheckRepositoryStatus />
-            </div>
-        )   
-    }
-    if(operation === 'trackStageFiles') {
-        return(
-            <div>
-                <TrackStageFiles />
-            </div>
-        )   
-    }
-    if(operation === 'unstageFiles') {
-        return(
-            <div>
-                <UnstageFiles />
-            </div>
-        )   
-    }
-    if(operation === 'performCommit') {
-        return(
-            <div>
-                <PerformCommit />
-            </div>
-        )   
-    }
-    if(operation === 'forceRemoveFile') {
-        return(
-            <div>
-                <ForceRemoveFile />
-            </div>
-        )   
-    }
-    if(operation === 'commitAmmend') {
-        return(
-            <div>
-                <CommitAmmend />
-            </div>
-        )   
-    }
-    if(operation === 'seeCommitLog') {
-        return(
-            <div>
-                <SeeCommitLog />
-            </div>
-        )   
-    }
-    if(operation === 'travelToCommit') {
-        return(
-            <div>
-                <TravelToCommit />
-            </div>
-        )   
-    }
-   
+    if(operation === 'startLocalRepository') {return(<div><StartLocalRepository /></div>)}
+    if(operation === 'checkRepositoryStatus') {return(<div><CheckRepositoryStatus /></div>)}
+    if(operation === 'trackStageFiles') {return(<div><TrackStageFiles /></div>)}
+    if(operation === 'unstageFiles') {return(<div><UnstageFiles /></div>)}
+    if(operation === 'performCommit') {return(<div><PerformCommit /></div>)}
+    if(operation === 'forceRemoveFile') {return(<div><ForceRemoveFile /></div>)}
+    if(operation === 'commitAmmend') {return(<div><CommitAmmend /></div>)}
+    if(operation === 'seeCommitLog') {return(<div><SeeCommitLog /></div>)}
+    if(operation === 'travelToCommit') {return(<div><TravelToCommit /></div>)}  
 }
 
 
@@ -92,7 +37,6 @@ const typeOfOperation = () => {
             <h3>
                 Local Repository Options:
             </h3>
-            
             <label htmlFor="localOperation">Choose a local operation: </label>
             <select id="localOperation" onChange={handleOnChange}>
                 <option value=''>None</option>
@@ -108,7 +52,6 @@ const typeOfOperation = () => {
             </select>
             {typeOfOperation()}
         </div>
-       
     )
 }
 
