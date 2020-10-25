@@ -11,7 +11,7 @@ const handleOnChange = (event) => {
 return(
     <div>
         <h3>Input email:</h3>
-            <label for="email">Email: </label>
+            <label htmlFor="email">Email: </label>
             <input 
             type='text' 
             minLength='1' 

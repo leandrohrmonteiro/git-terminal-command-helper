@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PerformCommit = () => {
+const CommitAmmend = () => {
 
 const [message,setMessage] = useState('')
 
@@ -19,9 +19,9 @@ const handleOnChange = (event) => {
             placeholder='Write message...'
             />
             <h3>Terminal git command is:</h3>
-            <p>git commit -m '{message}'</p>
+            <p>git commit --amend -m '{message}'</p>
         </div>
     )
 }
 
-export default PerformCommit
+export default CommitAmmend

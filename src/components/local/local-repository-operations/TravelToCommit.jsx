@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PerformCommit = () => {
+const TravelToCommit = () => {
 
 const [message,setMessage] = useState('')
 
@@ -10,18 +10,19 @@ const handleOnChange = (event) => {
 
     return(
         <div>
-            <h3>Input commit message:</h3>
-            <label htmlFor="message">Message: </label>
+            <h3>Input commit hash:</h3>
+            <label htmlFor="hash">Hash: </label>
             <input 
             type='text' 
             minLength='1' 
             onChange={handleOnChange}
-            placeholder='Write message...'
+            placeholder='Write commit hash...'
             />
             <h3>Terminal git command is:</h3>
-            <p>git commit -m '{message}'</p>
+            <p>git checkout '{message}'</p>
+            <p>git checkout master (to return to latest commit)</p>
         </div>
     )
 }
 
-export default PerformCommit
+export default TravelToCommit

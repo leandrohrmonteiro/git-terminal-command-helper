@@ -11,7 +11,7 @@ const handleOnChange = (event) => {
     return(
         <div>
             <h3>Input Filename:</h3>
-            <label for="fileName">Filename: </label>
+            <label htmlFor="fileName">Filename: </label>
             <input 
             type='text' 
             minLength='1' 
@@ -19,8 +19,8 @@ const handleOnChange = (event) => {
             placeholder='Write filename...'
             />
             <h3>Terminal git command is:</h3>
-            <p>git rm {file}</p>
-            <p>git rm . (for all files in folder)</p>
+            <p>git restore --staged {file}</p>
+            
         </div>
     )
 }

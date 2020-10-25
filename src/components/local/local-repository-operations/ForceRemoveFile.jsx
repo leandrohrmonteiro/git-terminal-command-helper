@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TrackStageFiles = () => {
+const ForceRemoveFile = () => {
 
 const [file,setFile] = useState('')
 
@@ -19,10 +19,10 @@ const handleOnChange = (event) => {
             placeholder='Write filename...'
             />
             <h3>Terminal git command is:</h3>
-            <p>git add {file}</p>
-            <p>git add . (for all files in folder)</p>
+            <p>git rm -f {file}</p>
+            <p>Forces: unstage, untrack and deletion of file.</p>
         </div>
     )
 }
 
-export default TrackStageFiles
+export default ForceRemoveFile

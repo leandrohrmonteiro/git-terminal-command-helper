@@ -33,7 +33,7 @@ const UserConfig = () => {
         <div>
             <h3>User Config options:</h3>
 
-            <label for="cars">Choose a config operation: </label>
+            <label htmlFor="userConfig">Choose a config operation: </label>
             <select name="repository" id="configOperations" onChange={handleOnChange}>
                 <option value=''>None</option>
                 <option value='setGlobalName'>Set global Username</option>
