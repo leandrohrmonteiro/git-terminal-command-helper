@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TravelToCommit = () => {
+const IgnoreFolder = () => {
 
 const [message,setMessage] = useState('')
 
@@ -10,19 +10,18 @@ const handleOnChange = (event) => {
 
     return(
         <div>
-            <h3>Input commit hash:</h3>
-            <label htmlFor="hash">Hash: </label>
+            <h3>Input folder to ignore:</h3>
+            <label htmlFor="message">Folder: </label>
             <input 
             type='text' 
             minLength='1' 
             onChange={handleOnChange}
-            placeholder='Write commit hash...'
+            placeholder='Write folder name...'
             />
             <h3>Terminal git command is:</h3>
-            <p>git checkout {message}</p>
-            <p>git checkout master (to return to latest commit)</p>
+            <p>{message}/</p>
         </div>
     )
 }
 
-export default TravelToCommit
+export default IgnoreFolder

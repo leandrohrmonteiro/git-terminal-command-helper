@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import UserConfig from './user-config/UserConfig'
+import GitIgnore from './gitignore/GitIgnore'
 import LocalRepository from './local/LocalRepository'
 import RemoteRepository from './remote/RemoteRepository'
 
@@ -16,6 +17,7 @@ const Form = () => {
 
         const typeOfRepository = () => {
             if(repository === 'userConfig') {return(<div><UserConfig /></div>)}
+            if(repository === 'gitIgnore') {return(<div><GitIgnore /></div>)}
             if(repository === 'local') {return(<div><LocalRepository /></div>)}
             if(repository === 'remote') {return(<div><RemoteRepository /></div>)} 
         }
@@ -31,6 +33,14 @@ const Form = () => {
                 onChange={handleChange}
                 />
                 <label htmlFor='user'>User Configuration</label><br/>
+
+                <input type='radio' 
+                id='gitIgnore' 
+                name='repository' 
+                value='gitIgnore' 
+                onChange={handleChange}
+                />
+                <label htmlFor='gitIgnore'>GitIgnore</label><br/>
 
                 <input type='radio' 
                 id='local' 
