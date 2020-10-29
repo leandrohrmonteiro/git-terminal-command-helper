@@ -4,6 +4,8 @@ import AddRemote from './remote-repository-operations/AddRemote'
 import GetDataFromRepository from './remote-repository-operations/GetDataFromRemote'
 import PushDataToRemote from './remote-repository-operations/PushDataToRemote'
 import RenameRemote from './remote-repository-operations/RenameRemote'
+import RemoveRemote from './remote-repository-operations/RemoveRemote'
+
 
 
 const RemoteRepository = () => {
@@ -20,6 +22,8 @@ const typeOfOperation = () => {
     if(operation === 'getDataFromRemote'){return(<div><GetDataFromRepository /></div>)}
     if(operation === 'pushDataToRemote'){return(<div><PushDataToRemote /></div>)}
     if(operation === 'renameRemote'){return(<div><RenameRemote /></div>)}
+    if(operation === 'removeRemote'){return(<div><RemoveRemote /></div>)}
+    
 }
 
 
@@ -37,6 +41,8 @@ const typeOfOperation = () => {
                 <option value='getDataFromRemote'>Get data from remote</option>
                 <option value='pushDataToRemote'>Push local data to remote repository</option>
                 <option value='renameRemote'>Rename remote repository</option>
+                <option value='removeRemote'>Remove remote repository</option>
+                
             </select>
             {typeOfOperation()}
         </div>

@@ -4,6 +4,7 @@ import UserConfig from './user-config/UserConfig'
 import GitIgnore from './gitignore/GitIgnore'
 import LocalRepository from './local/LocalRepository'
 import RemoteRepository from './remote/RemoteRepository'
+import Branching from './branching/Branching'
 
 
 const Form = () => {
@@ -20,6 +21,7 @@ const Form = () => {
             if(repository === 'gitIgnore') {return(<div><GitIgnore /></div>)}
             if(repository === 'local') {return(<div><LocalRepository /></div>)}
             if(repository === 'remote') {return(<div><RemoteRepository /></div>)} 
+            if(repository === 'branching') {return(<div><Branching /></div>)} 
         }
 
     return(
@@ -57,6 +59,15 @@ const Form = () => {
                 onChange={handleChange}
                 />
                 <label htmlFor='remote'>Remote Repository</label><br/>
+            
+
+            <input type='radio' 
+                id='branching' 
+                name='repository' 
+                value='branching' 
+                onChange={handleChange}
+                />
+                <label htmlFor='branching'>Branching</label><br/>
             </form>
             
             {typeOfRepository()}
