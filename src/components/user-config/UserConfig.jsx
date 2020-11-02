@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react'
 
-import SetGlobalName from './user-config-operations/SetGlobalName'
-import SetGlobalEmail from './user-config-operations/SetGlobalEmail'
+import UserConfigOptions from './UserConfigOptions'
+import OptionComponent from './OptionComponent'
 
-const UserConfig = () => {
+const UserConfig = () =>{
 
-    const [operation, setOperation] = useState('')
+  const[option, setOption] = useState('None')
 
-    const handleOnChange = (event) => {
-        setOperation(event.target.value)
-    }
-
-    const typeOfOperation = () => {
-        if(operation === 'setGlobalName') {return(<div><SetGlobalName /></div>)}
-        if(operation === 'setGlobalEmail') {return(<div><SetGlobalEmail /></div>)}
-    }
-    
-
+  const selectOptionOnChange = (event) =>{setOption(event.target.value)} 
+  
+  const renderAllOptions = (value) => {
     return(
-        <div>
-            <h3>User Config options:</h3>
+    <option key={value} value={value}>{value}</option>)}
 
-            <label htmlFor="userConfig">Choose a config operation: </label>
-            <select name="repository" id="configOperations" onChange={handleOnChange}>
-                <option value=''>None</option>
-                <option value='setGlobalName'>Set global Username</option>
-                <option value='setGlobalEmail'>Set global email</option>
-            </select>
-            {typeOfOperation()}
-        </div>
-    )
+//render selected option
+const filterUserConfigOptions = UserConfigOptions.filter(selection => selection.selectedOption === option)
+const filteredResult = filterUserConfigOptions.map(result => [result.selectedOption, result.label, result.code, result.description])
+//deconstructing the filtered result array
+const[resultObject] = filteredResult
+const[ resultOption, resultLabel, resultCode, resultDescription ] = resultObject
+
+
+const renderOptionComponent = () => {
+if(resultOption === option && resultOption !== 'None'){
+  return(<OptionComponent label={resultLabel} code={resultCode} description={resultDescription} />)}
+}
+
+
+  return(
+    <div> 
+<h3>Choose user configuration option:</h3>
+
+<select onChange={selectOptionOnChange}>
+{UserConfigOptions.map((options)=>{
+  return renderAllOptions(options.selectedOption);})}
+ </select> 
+{renderOptionComponent()}
+    </div>
+  )
 }
 
 export default UserConfig
