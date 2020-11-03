@@ -45,7 +45,7 @@ const LocalRepositoryOptions = [
       isItAMessage:false,
       codeBeforeInput:true,
       code:'git add',
-      description:'Tracks and stages selected file. (git add .) will do so for   all files.'
+      description:'Tracks and stages selected file. ( git add . ) will do so for   all files.'
       },
     {
       id:5,
@@ -78,7 +78,7 @@ const LocalRepositoryOptions = [
       aditionalLabel:'',
       hasUserInput:true,
       hasMultipleUserInput:false,
-      isItAMessage:false,
+      isItAMessage:true,
       codeBeforeInput:true,
       code:'git commit -m',
       description:'Creates commit snapshot with inputed message.'
@@ -90,7 +90,7 @@ const LocalRepositoryOptions = [
       aditionalLabel:'',
       hasUserInput:true,
       hasMultipleUserInput:false,
-      isItAMessage:false,
+      isItAMessage:true,
       codeBeforeInput:true,
       code:'git commit --ammend -m',
       description:'Copies over last commit snapshot and message.'
@@ -105,7 +105,7 @@ const LocalRepositoryOptions = [
       isItAMessage:false,
       codeBeforeInput:true,
       code:'git log',
-      description:'Returns log of commits performed. (git log --pretty=oneline)   To see hash and message in same line.'
+      description:'Returns log of commits performed. ( git log --pretty=oneline )   To see hash and message in same line.'
       },
     {
       id:10,
@@ -117,7 +117,7 @@ const LocalRepositoryOptions = [
       isItAMessage:false,
       codeBeforeInput:true,
       code:'git checkout',
-      description:'Transforms repository into commit snapshot inputed. (git checkout master) Transforms repository into the most recent commit.'
+      description:'Transforms repository into commit snapshot inputed. ( git checkout master ) Transforms repository into the most recent commit.'
       },
     
     ]

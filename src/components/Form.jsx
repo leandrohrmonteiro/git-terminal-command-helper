@@ -4,6 +4,8 @@ import FormOperationOptions from './FormOperationOptions'
 import UserConfig from './user-config/UserConfig'
 import GitIgnore from './git-ignore/GitIgnore'
 import LocalRepository from './local-repository/LocalRepository'
+import RemoteRepository from './remote-repository/RemoteRepository'
+import Branching from './branching/Branching'
 
 
 
@@ -35,6 +37,8 @@ const selectedOperation = () => {
   if(operation === 'User configuration'){return(<div><UserConfig /></div>)}
   if(operation === 'Gitignore'){return(<div><GitIgnore /></div>)}
   if(operation === 'Local repository'){return(<div><LocalRepository /></div>)}
+  if(operation === 'Remote repository'){return(<div><RemoteRepository /></div>)}
+  if(operation === 'Branching'){return(<div><Branching /></div>)}
 }
 
 

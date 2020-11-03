@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 
-import BranchingOptions from './BranchingOptions'
-import BranchingComponent from './BranchingComponent'
+import RemoteRepositoryOptions from './RemoteRepositoryOptions'
+import RemoteRepositoryComponent from './RemoteRepositoryComponent'
 
-const Branching = () => {
+const RemoteRepository = () => {
 
 const[option, setOption] = useState('None')
 const selectOptionOnChange = (event) => {setOption(event.target.value)}
@@ -12,8 +12,8 @@ const renderAllOptions = (value) => {
 return(
 <option key={value} value={value}>{value}</option>)}
 //render selected option
-const filterBranchingOptions = BranchingOptions.filter(selection=>selection.selectedOption === option)
-const filteredResult = filterBranchingOptions.map(result => [
+const filterRemoteRepositoryOptions = RemoteRepositoryOptions.filter(selection=>selection.selectedOption === option)
+const filteredResult = filterRemoteRepositoryOptions.map(result => [
   result.selectedOption,
   result.label, 
   result.aditionalLabel, 
@@ -28,9 +28,9 @@ const[resultObject] = filteredResult
 const[resultOption, 
   resultLabel, 
   resultAditionalLabel, 
-  resultHasUserInput, 
-  resultHasMultipleUserInput, 
-  resultIsItAMessage,
+  resulthasuserinput, 
+  resulthasmultipleuserinput, 
+  resultisitamessage,
   resultCodeBeforeInput,
   resultCode, 
   resultDescription] = resultObject
@@ -38,15 +38,15 @@ const[resultOption,
 
 
 
-const renderBranchingComponent = () => {
+const renderRemoteRepositoryComponent = () => {
 if(resultOption === option && resultOption !== 'None'){
-  return(<BranchingComponent 
+  return(<RemoteRepositoryComponent 
   label={resultLabel} 
-  aditionalLabel={resultAditionalLabel}
-  hasUserInput={resultHasUserInput} 
-  hasMultipleUserInput={resultHasMultipleUserInput} 
-  isItAMessage={resultIsItAMessage}
-  codeBeforeInput={resultCodeBeforeInput} 
+  aditionallabel={resultAditionalLabel}
+  hasuserinput={resulthasuserinput} 
+  hasmultipleuserinput={resulthasmultipleuserinput} 
+  isitamessage={resultisitamessage}
+  codebeforeinput={resultCodeBeforeInput} 
   code={resultCode} 
   description={resultDescription} />)}
 }
@@ -56,11 +56,11 @@ if(resultOption === option && resultOption !== 'None'){
 <div>
 <h3>Choose remote repository option:</h3>
 <select onChange={selectOptionOnChange}>
-{BranchingOptions.map((options)=>{
+{RemoteRepositoryOptions.map((options)=>{
 return renderAllOptions(options.selectedOption);})}
 </select>
-{renderBranchingComponent()}
+{renderRemoteRepositoryComponent()}
 </div>
   )
 }
-export default Branching
+export default RemoteRepository

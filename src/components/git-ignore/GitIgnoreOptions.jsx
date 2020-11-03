@@ -12,7 +12,7 @@ const GitIgnoreOptions = [
       selectedOption:'Ignore all files of type',
       label:'Ignore',
       codeBeforeInput:true,
-      code:'.',
+      code:'*.',
       description:'Ignores all files of selected type.'
     },
     {
